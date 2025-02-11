@@ -5,7 +5,7 @@ const fs = require('fs');
 // MongoDB connection URL with authentication options
 let url = `${process.env.MONGO_URL}`;
 let filename = `${__dirname}/gifts.json`;
-const dbName = 'giflink';
+const dbName = 'giftlink';
 const collectionName = 'gift-link';
 
 // notice you have to load the array of gifts into the data object
