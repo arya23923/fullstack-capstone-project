@@ -26,7 +26,7 @@ async function connectToDatabase() {
 
     // Task 3: Return database instance
     // {{insert code}}
-    return "dbInstance";
+    return dbInstance;
 }
 
 module.exports = connectToDatabase;

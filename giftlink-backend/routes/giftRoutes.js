@@ -1,7 +1,9 @@
+const { MongoClient } = require("mongodb");
+
 router.get('/', async (req, res) => {
     try {
         // Task 1: Connect to MongoDB and store connection to db constant
-        // const db = {{insert code here}}
+        const db = await connectToDatabase();
 
         // Task 2: use the collection() method to retrieve the gift collection
         // {{insert code here}}
