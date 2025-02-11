@@ -40,13 +40,9 @@ app.post('/sentiment', async (req, res) => {
         if(analysisResult < 0){
             sentiment = 'negative';
         }
-        else if(analysisResult >= 0 && analysisResult <= 0.33){
-            sentiment = 'neutral';
-        }
-        else{
+        else if( analysisResult > 0.33){
             sentiment = 'positive';
         }
-
         // Logging the result
         logger.info(`Sentiment analysis result: ${analysisResult}`);
 
@@ -55,7 +51,7 @@ app.post('/sentiment', async (req, res) => {
     } catch (error) {
         logger.error(`Error performing sentiment analysis: ${error}`);
         // Task 7: if there is an error, return a HTTP code of 500 and the json {'message': 'Error performing sentiment analysis'}
-        return res.status(500).json({'message': 'Error performing sentiment analysis'})
+        return res.status(500).json({message: 'Error performing sentiment analysis'})
     }
 });
 
