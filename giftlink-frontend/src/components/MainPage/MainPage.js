@@ -19,6 +19,7 @@ function MainPage() {
                 }
                 const data = await response.json();
                 setGifts(data);
+                console.log(data);
             } catch (error) {
                 console.log('Fetch error: ' + error.message);
             }

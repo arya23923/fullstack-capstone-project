@@ -9,7 +9,7 @@ router.get('/', async (req, res, next) => {
     try {
         const db = await connectToDatabase();
 
-        const collection = db.collection("gifts");
+        const collection = db.collection("gift-link");
         const gifts = await collection.find({}).toArray();
         res.json(gifts);
     } catch (e) {
@@ -22,7 +22,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const db = await connectToDatabase();
-        const collection = db.collection("gifts");
+        const collection = db.collection("gift-link");
         const id = req.params.id;
         const gift = await collection.findOne({ id: id });
 
@@ -41,7 +41,7 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try {
         const db = await connectToDatabase();
-        const collection = db.collection("gifts");
+        const collection = db.collection("gift-link");
         const gift = await collection.insertOne(req.body);
 
         res.status(201).json(gift.ops[0]);
