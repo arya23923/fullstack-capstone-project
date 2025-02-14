@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import './DetailsPage.css';
-import DetailsPage from './components/DetailsPage/DetailsPage';
 
 function DetailsPage() {
     const navigate = useNavigate();
